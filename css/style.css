@@ -1,0 +1,312 @@
+ body {
+            font-size: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center{
+            text-align: center;
+        }
+
+       
+
+        .container {
+            display: block;
+            width: 75%;
+            margin: auto;
+            /* position: relative; */
+            background: red;
+        }
+
+        @media screen and (max-width: 767px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        .inside{
+            position: relative;
+            /* border: 10px solid red; */
+        }
+
+        .slide1,
+        #slide2,
+        .slide3 {
+            /* position: absolute; */
+            margin: auto;
+            overflow: hidden;
+            width: inherit;
+            text-align: center;
+            transition: all 3s;
+            z-index: 1;
+        }
+
+        #slide1 h2 {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, -10%);
+            font-size: 3rem;
+            text-shadow: 1px 1px #FFF;
+        }
+
+        .navigation {
+            opacity: 0;
+            transition: all 6s;
+            transform: scale(1);
+            color: #FFF;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, 70%);
+        }
+
+        .slide1 img,
+        #slide2 .bg-image {
+            max-width: 100%;
+            transition: all 3s;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        .scale {
+            transform: scale(2) !important;
+        }
+
+        .slide1:hover .navigation {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .container ul {
+            display: flex;
+            list-style: none;
+            font-size: 2rem;
+            justify-content: center;
+            border-bottom: 5px solid #FFF;
+            align-items: flex-end;
+        }
+
+        .container li.parent {
+            margin: auto 8%;
+            position: relative;
+            padding-bottom: 10px;
+            cursor: pointer;
+            transform: scale(1);
+            display: inherit;
+        }
+
+        .container li.parent ul {
+            border: none;
+            position: absolute;
+            height: 100px;
+            left: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .container li.parent li {
+            position: relative;
+            font-size: 1.5rem;
+            height: 60%;
+        }
+
+        .container li.parent li.active {
+            font-size: 2rem;
+            height: 80%;
+        }
+
+        .container li.parent li:before {
+            height: 40%;
+            width: 5px;
+            background-color: #FFF;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container li.parent li.active:before {
+            height: 60%;
+        }
+
+        .container li.parent:before {
+            height: 25px;
+            width: 25px;
+            background-color: #FFF;
+            border-radius: 100%;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-top: 27px;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .show {
+            display: inherit !important;
+        }
+
+        .lineUp {
+            animation-name: anim-1;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes anim-1 {
+
+            0%,
+            8.3% {
+                top: 0%;
+                left: 0%;
+                opacity: 0;
+            }
+
+            8.3%,
+            100% {
+                top: 50%;
+                left: 50%;
+                opacity: 1;
+            }
+        }
+
+        .hideslide {
+            opacity: 0;
+            animation-name: hideslide-1;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 2s;
+        }
+
+        @keyframes hideslide-1 {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                height: 0 !important;
+                display: none !important;
+            }
+        }
+
+        .showslide {
+            opacity: 1;
+            animation-name: showslide-1;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in;
+            animation-duration: 2s;
+        }
+
+        @keyframes showslide-1 {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        #slide2 .sub {
+            position: absolute;
+            display: flex;
+            z-index: 2;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            align-items: center;
+            color: #fff;
+            justify-content: left;
+        }
+
+        .sub {
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+
+
+        @keyframes slidein {
+            from {
+            width: 10px;
+            top: 0%;   
+            left: 25%;
+            transform: translate(-25%, -0%);
+            }
+
+            to {
+            width: auto;    
+            top: 25%;   
+            left: 50%;
+            transform: translate(-50%, -25%);
+            }
+        } 
+
+
+        .ani-1 {
+    display: block;
+    /* font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px; */
+   /*  Animation decalaration   */
+    animation-name: moveInleft;
+    animation-duration: 3s;
+}
+
+.ani-2 {
+    display: block;
+    /* font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 15.9px; */
+  
+    animation-name: moveInRight;
+    animation-duration: 3s;
+}
+
+@keyframes moveInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+}
