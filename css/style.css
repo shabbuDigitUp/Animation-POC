@@ -55,6 +55,12 @@
             text-shadow: 1px 1px #FFF;
         }
 
+        @media screen and (max-width: 767px) {
+            #slide1 h2 {
+                font-size: 1.5rem;
+            }
+        }
+
         .navigation {
             opacity: 0;
             transition: all 6s;
@@ -66,7 +72,9 @@
             top: 70%;
             left: 50%;
             transform: translate(-50%, 70%);
+            
         }
+       
 
         .slide1 img,
         #slide2 .bg-image {
@@ -98,6 +106,12 @@
             align-items: flex-end;
         }
 
+        @media screen and (max-width: 767px) {
+            .container ul {
+                font-size: 1rem;
+            }
+        }
+
         .container li.parent {
             margin: auto 8%;
             position: relative;
@@ -115,15 +129,33 @@
             transform: translate(50%, -50%);
         }
 
+        @media screen and (max-width: 767px) {
+            .container li.parent ul {
+                left: 15%;
+            }
+        }
+
         .container li.parent li {
             position: relative;
             font-size: 1.5rem;
             height: 60%;
         }
 
+        @media screen and (max-width: 767px) {
+            .container li.parent li {
+                font-size: 1rem;
+            }
+        }
+
         .container li.parent li.active {
             font-size: 2rem;
             height: 80%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .container li.parent li.active {
+                font-size: 1.5rem;
+            }
         }
 
         .container li.parent li:before {
@@ -137,8 +169,20 @@
             transform: translateX(-50%);
         }
 
+        @media screen and (max-width: 767px) {
+            .container li.parent li:before {
+                bottom: 17px;
+            }
+        }
+
         .container li.parent li.active:before {
             height: 60%;
+        }
+
+        @media screen and (max-width: 767px) {
+            .container li.parent li.active:before {
+                height: 50%;
+            }
         }
 
         .container li.parent:before {
@@ -152,6 +196,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             margin-top: 27px;
+        }
+        @media screen and (max-width: 767px) {
+            .container li.parent:before {
+                margin-top: 18px;
+            }
         }
 
         .hide {
